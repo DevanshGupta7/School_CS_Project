@@ -4,7 +4,7 @@ from terminal_clear import clear_terminal
 from variables import memberships, memberships_plans, costumer_details
 from datetime import datetime
 from choose_plan import plan_choose
-from table_print import print_table
+from table_print import print_table_costumer
 
 
 def choose_customer():
@@ -99,7 +99,7 @@ def choose_customer():
                             "name": name, "address": address, "contact": contact}
                         memberships[costumer_ID] = {
                             "Membership": "NO", "plan":"", "start_date": "", "end_date": ""}
-                        pri
+                        print_table_costumer(memberships)
                         break
             
             

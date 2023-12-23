@@ -1,6 +1,7 @@
 from variables import memberships, memberships_plans
 from terminal_clear import clear_terminal
 from datetime import datetime, timedelta
+from choose_plan import plan_choose
 import time
 
 
@@ -11,7 +12,6 @@ def payment_choice(costmr_id, money_pay, month):
             try:
                 choice = input(f"1. Debit Card?\n2. Credit Card?\n3. UPI\n4. Cash\n(Enter 'BACK' to go back\n)")
                 if choice.upper() == "BACK":
-                    from choose_plan import plan_choose
                     plan_choose(memberships_plans, costmr_id)
                 else:
                     choice = int(choice)
