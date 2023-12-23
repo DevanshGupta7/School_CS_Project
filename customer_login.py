@@ -1,8 +1,10 @@
-from terminal_clear import clear_terminal
 import time
-from variables import memberships, memberships_plans
+import random
+from terminal_clear import clear_terminal
+from variables import memberships, memberships_plans, costumer_details
 from datetime import datetime
 from choose_plan import plan_choose
+from table_print import print_table
 
 
 def choose_customer():
@@ -61,7 +63,43 @@ def choose_customer():
                 print("You have valid membership. So, please continue to GYM")
                 
         elif choice == 2:
-            #egister_user(costumer_details, memberships)
-            pass
+            print("Register yourself in our GYM\n")
+            while True:
+                name = input("Enter your name(Enter 'BACK' for going back): ")
+                if name.upper() == "BACK":
+                    clear_terminal()
+                    break
+                address = input("Enter your address(Enter 'BACK' for going back): ")
+                if address.upper() == "BACK":
+                    clear_terminal()
+                    break
+
+                while True:
+                    try:
+                        contact = (input("Enter your contact number(Enter 'BACK' for going back): "))
+                        if contact.upper() == "BACK":
+                            clear_terminal()
+                            return
+                        else:
+                            contact = int(contact)
+                        if len(str(contact)) != 10:
+                            print("Pls enter 10-digit mobile number!")
+                            continue
+                        else:
+                            break
+
+                    except ValueError:
+                        print("Pls enter only integers")
+                        continue
+
+                while True:
+                    costumer_ID = random.randint(100000, 999999)
+                    if costumer_ID not in costumer_details:
+                        costumer_details[costumer_ID] = {
+                            "name": name, "address": address, "contact": contact}
+                        memberships[costumer_ID] = {
+                            "Membership": "NO", "plan":"", "start_date": "", "end_date": ""}
+                        pri
+                        break
             
             

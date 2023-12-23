@@ -119,6 +119,3 @@ def payment_choice(costmr_id, money_pay, month):
                 memberships[costmr_id]["Membership"] = "YES"
             else:
                 continue
-
-
-
