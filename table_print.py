@@ -10,10 +10,10 @@ def print_table_plan(data):
     print(table)
     
     
-def print_table_costumer(data):
+def print_table_costumer(data, id):
     table = PrettyTable()
     table.field_names = ["ID", "Name", "Address", "Contact no."]
     
-    table.add_row([data[id], data[id]["name"], data[id]["address"], data[id]["contact"]])
+    table.add_row([id, data[id]["name"], data[id]["address"], data[id]["contact"]])
 
     print(table)

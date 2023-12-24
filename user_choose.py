@@ -1,6 +1,6 @@
 import time
 from terminal_clear import clear_terminal
-from customer_login import choose_customer
+
     
 
 def choose_user():
@@ -23,6 +23,7 @@ def choose_user():
             
             
     if choice == 1:
+        from customer_login import choose_customer
         choose_customer()
     elif choice == 2:
         pass

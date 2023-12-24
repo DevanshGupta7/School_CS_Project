@@ -1,7 +1,5 @@
 from terminal_clear import clear_terminal
-from user_choose import choose_user
 from variables import manager_details
-from manage_plans_manager import manage_plans
 import time
 
 
@@ -14,8 +12,9 @@ def manager():
         while True:
             print("***Manager***\n")
             try:
-                choice = int(input(f"1. Login?\n2. SignUp?\n(Enter 'BACK' to go back)\n"))
+                choice = input(f"1. Login?\n2. SignUp?\n(Enter 'BACK' to go back)\n")
                 if choice.upper() == "BACK":
+                    from user_choose import choose_user
                     choose_user()
                 else:
                     choice = int(choice)
@@ -56,6 +55,7 @@ def manager():
                 clear_terminal()
                 continue
             else:
+                from manage_plans_manager import manage_plans
                 manage_plans()
             break
 
@@ -77,6 +77,8 @@ def manager():
             if mobile_no.upper() == "BACK":
                 clear_terminal()
                 return
+            else:
+                mobile_no = int(mobile_no)
             manager_details.append([[name_signup, passw_signup], email_id, mobile_no])
             print("Successfully Signed Up")
             time.sleep(2)

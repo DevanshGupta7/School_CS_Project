@@ -3,8 +3,6 @@ import random
 from terminal_clear import clear_terminal
 from variables import memberships, memberships_plans, costumer_details
 from datetime import datetime
-from choose_plan import plan_choose
-from table_print import print_table_costumer
 
 
 def choose_customer():
@@ -46,6 +44,7 @@ def choose_customer():
                         memberships[costmr_id]["Membership"] = "NO"
                         
                         if memberships[costmr_id]["Membership"] == "NO":
+                            from choose_plan import plan_choose
                             plan_choose(memberships_plans, costmr_id)
                         else:
                             print("Welcome to GYM")
@@ -93,13 +92,20 @@ def choose_customer():
                         continue
 
                 while True:
+                    is_signedUp = False
                     costumer_ID = random.randint(100000, 999999)
                     if costumer_ID not in costumer_details:
                         costumer_details[costumer_ID] = {
                             "name": name, "address": address, "contact": contact}
                         memberships[costumer_ID] = {
                             "Membership": "NO", "plan":"", "start_date": "", "end_date": ""}
-                        print_table_costumer(memberships)
-                        break
+                        from table_print import print_table_costumer
+                        is_signedUp = True
+                        print_table_costumer(costumer_details, costumer_ID)
+                        enter = input("Press any key and tap enter to continue: ")
+                        if len(enter) != 0:
+                            break
+                if is_signedUp:
+                    break
             
             

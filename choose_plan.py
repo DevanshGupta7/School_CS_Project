@@ -1,12 +1,11 @@
-from table_print import print_table_plan
 from terminal_clear import clear_terminal
-from choice_payment import payment_choice
 import time
 
 
 def plan_choose(memberships_plans, costmr_id):
     while True:
         print("You dont have any valid membership pls buy to continue")
+        from table_print import print_table_plan
         print_table_plan(memberships_plans)
         print("\n")
         print("Deluxe:\nAccess to gym facilities, Standard workout equipment usage (cardio machines, weightlifting equipment), general fitness classes\n\nSuper:\nAll benefits of Deluxe Membership, Access to additional amenities, such as sauna or steam room, Extended gym hours, Personalized fitness assessment\n\nPremium:\nAll benefits of Super Membership, Access to premium gym equipment and technology, Unlimited access to all fitness classes, including specialty classes, Personalized workout plans designed by fitness trainers, Nutrition consultation")
@@ -54,4 +53,5 @@ def plan_choose(memberships_plans, costmr_id):
             else:
                 continue
             
+        from choice_payment import payment_choice
         payment_choice(costmr_id, money_pay, month)
