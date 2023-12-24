@@ -2,6 +2,10 @@ from variables import memberships_plans
 from terminal_clear import clear_terminal
 import time
 
+def show_alldetails():
+    pass
+
+
 def manage_plans():
     while True:
         while True:
