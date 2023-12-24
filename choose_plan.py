@@ -29,32 +29,38 @@ def plan_choose(memberships_plans, costmr_id):
             clear_terminal()
     
     if plan == 1:
-        confirm = input("Do want to confirm it")
+        confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
-            money_pay = (800*month) - (800*month)*((month*month)/100)
+            money_pay = (800*month) - (800*month)*(month/100)
             print(f"Original money is {month*800}\nDiscounted money is {money_pay}")
+            buyed_plan = "Deluxe"
         else:
-            plan_choose()
+            clear_terminal()
+            plan_choose(memberships_plans, costmr_id)
             return
     elif plan == 2:
-        confirm = input("Do want to confirm it")
+        confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
-            money_pay = (1500*month) - (1500*month)*((month*month)/100)
+            money_pay = (1500*month) - (1500*month)*(month/100)
+            print(f"Original money is {month*1500}\nDiscounted money is {money_pay}")
+            buyed_plan = "Super"
         else:
-            plan_choose()
+            clear_terminal()
+            plan_choose(memberships_plans, costmr_id)
             return
-        print(f"Original money is {month*1500}\nDiscounted money is {money_pay}")
     elif plan == 3:
-        confirm = input("Do want to confirm it")
+        confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
-            money_pay = (2000*month) - (2000*month)*((month*month)/100)
+            money_pay = (2000*month) - (2000*month)*(month/100)
             print(f"Original money is {month*2000}\nDiscounted money is {money_pay}")
+            buyed_plan = "Premium"
         else:
-            plan_choose()
+            clear_terminal()
+            plan_choose(memberships_plans, costmr_id)
             return
         
     from choice_payment import payment_choice
-    payment_choice(costmr_id, money_pay, month)
+    payment_choice(costmr_id, money_pay, month, buyed_plan)

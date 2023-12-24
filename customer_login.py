@@ -38,11 +38,17 @@ def choose_customer():
             clear_terminal()
             choose_customer()
             return
+        elif choice != 1 and choice != 2:
+            print("Pls enter only from above options")
+            time.sleep(2)
+            choose_customer()
+            
         if costmr_id in memberships:
-            if memberships[costmr_id]["end_date"] < datetime.now().date().strftime("%Y-%m-%d") or len(memberships[costmr_id]["end_date"]) == 0:
+            if memberships[costmr_id]["end_date"] < datetime.now().date().strftime("%Y%m%d") or len(memberships[costmr_id]["end_date"]) == 0:
                 memberships[costmr_id]["Membership"] = "NO"
                 
                 if memberships[costmr_id]["Membership"] == "NO":
+                    clear_terminal()
                     from choose_plan import plan_choose
                     plan_choose(memberships_plans, costmr_id)
                 else:
@@ -55,6 +61,8 @@ def choose_customer():
                 
         else:
             print("Pls enter correct ID or register to our GYM")
+            time.sleep(2)
+            clear_terminal()
             choose_customer()
             return
             
@@ -76,6 +84,10 @@ def choose_customer():
                     clear_terminal()
                     choose_customer()
                     return
+                else:
+                    print("Pls enter only from above options")
+                    time.sleep(2)
+                    choose_customer()
                 
                 if len(str(contact)) != 10:
                     print("Pls enter 10-digit mobile number!")
@@ -95,10 +107,11 @@ def choose_customer():
                 memberships[costumer_ID] = {
                     "Membership": "NO", "plan":"", "start_date": "", "end_date": ""}
                 from table_print import print_table_costumer
+                clear_terminal()
                 print_table_costumer(costumer_details, costumer_ID)
-                print(memberships)
                 enter = input("Press any key and tap enter to continue: ")
                 if len(enter) != 0:
+                    clear_terminal()
                     choose_customer()
                     return
             
