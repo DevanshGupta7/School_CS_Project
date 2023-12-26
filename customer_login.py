@@ -9,7 +9,7 @@ def choose_customer():
     while True:
         print("***Welcome to GYM***\n")
         try:
-            choice = input(f"1. Existing costumer?\n2. New costumer?\n(Enter 'BACK' for going back)\n")
+            choice = input(f"1. Existing customer?\n2. New customer?\n(Enter 'BACK' for going back)\n")
             if choice.upper() == "BACK":
                 from user_choose import choose_user
                 choose_user()
