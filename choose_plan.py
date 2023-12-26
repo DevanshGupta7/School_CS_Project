@@ -32,6 +32,7 @@ def plan_choose(memberships_plans, costmr_id):
         confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
+            clear_terminal()
             money_pay = (800*month) - (800*month)*(month/100)
             print(f"Original money is {month*800}\nDiscounted money is {money_pay}")
             buyed_plan = "Deluxe"
@@ -43,6 +44,7 @@ def plan_choose(memberships_plans, costmr_id):
         confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
+            clear_terminal()
             money_pay = (1500*month) - (1500*month)*(month/100)
             print(f"Original money is {month*1500}\nDiscounted money is {money_pay}")
             buyed_plan = "Super"
@@ -54,6 +56,7 @@ def plan_choose(memberships_plans, costmr_id):
         confirm = input("Do want to confirm it: ")
         if confirm.upper() == "YES":
             month = int(input("Duration of membership in month: "))
+            clear_terminal()
             money_pay = (2000*month) - (2000*month)*(month/100)
             print(f"Original money is {month*2000}\nDiscounted money is {money_pay}")
             buyed_plan = "Premium"

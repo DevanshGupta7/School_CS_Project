@@ -1,5 +1,5 @@
 from prettytable import PrettyTable
-from variables import memberships, costumer_details
+from variables import memberships
 from datetime import datetime
 
 def print_table_plan(data):
@@ -21,24 +21,34 @@ def print_table_costumer(data, id):
     print(table)
     
     
-def print_table_costumer_details(data_customer, data_membership):
+def print_table_costumer_details(data_customer):
     table = PrettyTable()
     table.field_names = ["S.No", "ID", "Name", "Address", "Contact", "Membership", "Plan", "Start Date", "End Date"]
     sno = 1
-    
-    for id, info in zip(data_customer, data_membership):
+        
+    for id in data_customer:
         customer_info = data_customer[id]
-        membership_info = data_membership[info]
-        start_date_str = membership_info["start_date"]
-        start_date_strp = datetime.strptime(start_date_str, "%Y%m%d").date()
-        formatted_start_date_str = start_date_strp.strftime("%d-%m-%Y")
+        if id in memberships:
+            membership_info = memberships[id]
+            
+            start_date_str = membership_info["start_date"]
+            start_date_strp = datetime.strptime(start_date_str, "%Y%m%d").date()
+            formatted_start_date_str = start_date_strp.strftime("%d-%m-%Y")
+            
+            end_date_str = membership_info["end_date"]
+            end_date_strp = datetime.strptime(end_date_str, "%Y%m%d").date()
+            formatted_end_date_str = end_date_strp.strftime("%d-%m-%Y")
+            
+            table.add_row([sno, id, customer_info["name"], customer_info["address"], customer_info["contact"], membership_info["Membership"],
+                        membership_info["plan"], formatted_start_date_str, formatted_end_date_str])
+        else:
+            membership_info = {'Membership': '--', 'plan': '--', 'start_date': '--', 'end_date': '--'}
+
+            table.add_row([sno, id, customer_info["name"], customer_info["address"], customer_info["contact"], membership_info["Membership"],
+                        membership_info["plan"], membership_info["start_date"], membership_info["end_date"]])
         
-        end_date_str = membership_info["end_date"]
-        end_date_strp = datetime.strptime(end_date_str, "%Y%m%d").date()
-        formatted_end_date_str = end_date_strp.strftime("%d-%m-%Y")
-        #20231224
-        #YYYYMMDD to DD-MM-YYYY
+        sno += 1
         
-        table.add_row([sno, customer_info["name"], customer_info["address"], customer_info["contact"], membership_info["Membership"],
-                       membership_info["plan"], formatted_start_date_str, formatted_end_date_str])
+    print(table)
+
 

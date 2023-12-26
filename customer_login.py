@@ -15,7 +15,7 @@ def choose_customer():
                 choose_user()
             else:
                 choice = int(choice)
-            if choice > 2:
+            if choice > 3:
                 print("Pls choose only from given options")
                 time.sleep(2)
                 clear_terminal()
@@ -67,7 +67,8 @@ def choose_customer():
             return
             
         if is_costumer_valid:
-            print("You have valid membership. So, please continue to GYM")
+            print("You have valid membership. So, please continue to GYM\nEnjoy your Day!")
+            print(f"Your plan will on {memberships[costmr_id]["end_date"]}")
             
     elif choice == 2:
         print("Register yourself in our GYM\n")

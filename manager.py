@@ -41,7 +41,7 @@ def manager():
             return
         
         for stored_details in manager_details:
-            if stored_details[0] == name and stored_details[1] == passw:
+            if stored_details[0][0] == name and stored_details[0][1] == passw:
                 is_loggedIn = True
                 print("Login successfull")
                 clear_terminal()
@@ -53,8 +53,26 @@ def manager():
             clear_terminal()
             manager()
         else:
-            from manage_access import manage_plans
-            manage_plans()
+            choice = int(input("1. Show customer details\n2. Manage plans\n"))
+            if choice == 1:
+                from manage_manager import show_alldetails
+                show_alldetails()
+                enter = input("Press any key and press enter to continue: ")
+                if len(enter) != 0:
+                    clear_terminal()
+                    from main import main
+                    main()
+                    return
+            elif choice == 2:
+                from manage_manager import manage_plans
+                manage_plans()
+                enter = input("Press any key and press enter to continue: ")
+                if len(enter) != 0:
+                    clear_terminal()
+                    from main import main
+                    main()
+                    return
+                
 
     elif choice == 2:
         print("***Manager***\n")

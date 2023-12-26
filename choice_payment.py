@@ -56,16 +56,13 @@ def payment_choice(costmr_id, money_pay, month, buyed_plan):
             memberships[costmr_id]["start_date"] = current_date
             memberships[costmr_id]["end_date"] = date_after_plan
             memberships[costmr_id]["Membership"] = "YES"
-            print(type(memberships[costmr_id]["end_date"]))
-            print(type(datetime.now().date()))
-            print(memberships)
             
             current_date = datetime.strptime(current_date, "%Y%m%d").date()
             formatted_current_date = datetime(current_date.year, current_date.month, current_date.day).date()
             date_after_plan = datetime.strptime(date_after_plan, "%Y%m%d").date()
             formatted_dayafterplan_date = datetime(date_after_plan.year, date_after_plan.month, date_after_plan.day).date()
             
-            print(f"Plan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
+            print(f"\nPlan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
             enter = input("Press any key and tap enter to continue: ")
             if len(enter) != 0:
                 clear_terminal()
@@ -104,14 +101,13 @@ def payment_choice(costmr_id, money_pay, month, buyed_plan):
             memberships[costmr_id]["start_date"] = current_date
             memberships[costmr_id]["end_date"] = date_after_plan
             memberships[costmr_id]["Membership"] = "YES"
-            print(memberships)
             
             current_date = datetime.strptime(current_date, "%Y%m%d").date()
             formatted_current_date = datetime(current_date.year, current_date.month, current_date.day).date()
             date_after_plan = datetime.strptime(date_after_plan, "%Y%m%d").date()
             formatted_dayafterplan_date = datetime(date_after_plan.year, date_after_plan.month, date_after_plan.day).date()
             
-            print(f"Plan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
+            print(f"\nPlan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
             enter = input("Press any key and tap enter to continue: ")
             if len(enter) != 0:
                 clear_terminal()
@@ -136,14 +132,13 @@ def payment_choice(costmr_id, money_pay, month, buyed_plan):
             memberships[costmr_id]["plan"] = buyed_plan
             memberships[costmr_id]["start_date"] = current_date
             memberships[costmr_id]["end_date"] = date_after_plan
-            print(memberships)
             
             current_date = datetime.strptime(current_date, "%Y%m%d").date()
             formatted_current_date = datetime(current_date.year, current_date.month, current_date.day).date()
             date_after_plan = datetime.strptime(date_after_plan, "%Y%m%d").date()
             formatted_dayafterplan_date = datetime(date_after_plan.year, date_after_plan.month, date_after_plan.day).date()
             
-            print(f"Plan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
+            print(f"\nPlan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
             enter = input("Press any key and tap enter to continue: ")
             if len(enter) != 0:
                 clear_terminal()
@@ -183,14 +178,13 @@ def payment_choice(costmr_id, money_pay, month, buyed_plan):
             memberships[costmr_id]["start_date"] = current_date
             memberships[costmr_id]["end_date"] = date_after_plan
             memberships[costmr_id]["Membership"] = "YES"
-            print(memberships)
             
             current_date = datetime.strptime(current_date, "%Y%m%d").date()
             formatted_current_date = datetime(current_date.year, current_date.month, current_date.day).date()
             date_after_plan = datetime.strptime(date_after_plan, "%Y%m%d").date()
             formatted_dayafterplan_date = datetime(date_after_plan.year, date_after_plan.month, date_after_plan.day).date()
             
-            print(f"Plan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
+            print(f"\nPlan is: {buyed_plan}\nPrice is: {money_pay}\nStart date is: {formatted_current_date}\nEnd date is:{formatted_dayafterplan_date}")
             enter = input("Press any key and tap enter to continue: ")
             if len(enter) != 0:
                 clear_terminal()

@@ -26,4 +26,6 @@ def choose_user():
         from customer_login import choose_customer
         choose_customer()
     elif choice == 2:
-        pass
+        from manager import manager
+        manager()
+        return
